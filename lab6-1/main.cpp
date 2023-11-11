@@ -107,7 +107,7 @@ void ADC1_Init(void)
   */
     sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
     sConfig.Rank = ADC_REGULAR_RANK_1;
-    sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;//ADC_SAMPLETIME_247CYCLES_5;
+    sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5 / 2;//ADC_SAMPLETIME_247CYCLES_5;
     sConfig.SingleDiff = ADC_SINGLE_ENDED;
     sConfig.OffsetNumber = ADC_OFFSET_NONE;
     sConfig.Offset = 0;
@@ -151,9 +151,9 @@ static void TIM1_Init(void)
     TIM_MasterConfigTypeDef sMasterConfig = {0};
 
     htim1.Instance = TIM1;
-    htim1.Init.Prescaler = 6000 - 1;
+    htim1.Init.Prescaler = 4000 - 1;
     htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-    htim1.Init.Period = 1000 - 1;
+    htim1.Init.Period = 2000 - 1;
     htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
     if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
