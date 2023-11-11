@@ -151,7 +151,7 @@ static void TIM1_Init(void)
     TIM_MasterConfigTypeDef sMasterConfig = {0};
 
     htim1.Instance = TIM1;
-    htim1.Init.Prescaler = 4000 - 1;
+    htim1.Init.Prescaler = 6000 - 1;
     htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
     htim1.Init.Period = 1000 - 1;
     htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
